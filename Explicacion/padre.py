@@ -1,46 +1,75 @@
+#HERENCIA DE PYTHON
 class Persona:
     nombre   = str
     apellido = str
+    edad     = int
+    def __init__(self, nombre, apellido, edad) :
+        self.nombre   = nombre
+        self.apellido = apellido
+        self.edad     = edad
+    
+    def conversar(self,otra_persona):
+        return f'Hola{otra_persona.nombre}, me llamo {self.apellido}, tengo {self.edad}'
+    
+class Hijo(Persona):
+    ciudad  = str
+    
+    def __init__(self, nombre, apellido, edad, ciudad):
+        super().__init__(nombre, apellido, edad)
+        self.ciudad = ciudad
+        
+padre = Persona("Victor", "Grados", 40)
+print(vars(padre))
 
-    def __init__(self, nombre, apellido):
+hijo = Hijo("Elena", "Grados", 24, "Quito") 
+
+print(vars(hijo))
+print(padre.conversar(hijo))
+
+#AGREGAR METODOS EN LA HERENCIA
+
+class Persona2:
+
+    nombre   = str
+    apellido = str
+   
+    def __init__(self, nombre, apellido) :
         self.nombre   = nombre
         self.apellido = apellido
         
-    def imprimir(self):
-        print(self.nombre, self.apellido)
-
-x = Persona("Alexander", "Flores")
-x.imprimir()
-
-class Studiante(Persona):
-    pass
-
-y = Studiante("Jerremi", "Cañizares")
-y.imprimir()
-
-
-class Student(Persona):
-    edad =  int
     
-    def __init__(self, nombre, apellido, edad):
-        Persona.__init__(self,nombre, apellido)
-        self.edad = edad
+    def conversar(self, otra_persona):
+        return f"Hola{otra_persona.nombre}, me llamo {self.apellido}, tengo {self.edad} "
 
-estudiante1 = Student("Carlos", "Dell", 30)
-estudiante1.imprimir()
-
-
-class Student1(Persona):
-    edad     = int
-    semestre = str
+class Hijo2(Persona2):
+    estudios      = str
+    lugarEstudios = str
     
-    def __init__(self, nombre, apellido, edad, semestre):
+    def __init__(self, nombre, apellido, estudios, lugardeestudios):
         super().__init__(nombre, apellido)
-        self.edad     = edad
-        self.semestre = semestre
+        self.estudios = estudios
+        self.lugarEstudios = lugardeestudios
+        
+    def informar(self, otra_persona):
+        return f'Buenas tardes,  {otra_persona.nombre} acabo de estudiar {self.estudios} en {self.lugarEstudios}'
     
-    def bienvenido(self):
-        print("Bienvenido " + self.apellido + " al " + self.semestre + " ingresas a los " + str(self.edad) + " años")
+padre2 = Persona2("Juan", "Flores")
+hijo2  = Hijo2("Jose", "Perez", "Programacion", "YAVIRAC")
 
-p5 = Student1("Diego", "Yanez", 29, "Segundo")
-p5.bienvenido()
+
+print(hijo2.informar(padre2))
+
+class Padre:
+     nombre = str
+     apellido = str
+     edad = int
+     ciudad = str
+    
+     def __init__(self, nombre, apellido, edad, ciudad):
+        self.nombre = nombre
+        self.apellido = apellido
+        self.edad = edad
+        self. ciudad = ciudad
+        
+     def bienvenido(self, hijo):
+        return f'Buena {hijo.nombre} bienvenido a casa, la cena esta  en el micro yo me encunetro de viaje en  {self.ciudad} att: {self.nombre} {self.apellido}'
