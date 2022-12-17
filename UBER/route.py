@@ -1,12 +1,12 @@
 class Route:
-    inicio    = [int, int]
-    fin       = [int, int]
-    tiempo    = int
-    distancia = int
+    inicio      =  [int, int]
+    fin         =  [int, int]
+    timepoAprox = int
+    distanciaKm = int
     
-    def __init__(self, inicio, fin, tiempo, distancia):
-        self.inicio    = inicio
-        self.fin       = fin
-        self.tiempo    = tiempo
-        self.distancia = distancia
+    def __init__(self, inicio, fin, tiempoAprox, distanciaKm):
+        self.inicio      = inicio
+        self.fin         = fin
+        self.timepoAprox = tiempoAprox
+        self.distanciaKm = distanciaKm
         

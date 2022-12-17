@@ -3,11 +3,10 @@ from payment import Payment
 class PaymentCard(Payment):
     cuenta      = int
     banco       = str
-    datotarjeta = []
+    datoTarjeta = {}
     
-    
-    def __init__(self, cuenta, banco, datotarjeta,valor,fecha):
-            super().__init__(id,valor , fecha)
-            self.cuenta      = cuenta
-            self.banco       = banco
-            self.datotarjeta = datotarjeta
+    def __init__(self, id, ammount, user, driver, type, cuenta, banco, datoTarjeta):
+        super().__init__(id, ammount, user, driver, type)
+        self.cuenta    = cuenta
+        self.banco     = banco
+        self.datoTarjeta = datoTarjeta

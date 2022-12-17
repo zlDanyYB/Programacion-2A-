@@ -1,5 +1,8 @@
 from payment import Payment
 
 class PaymentCash(Payment):
-    def __init__(self, id, valor, fecha):
-        super().__init__(id, valor, fecha)
+    fechadePago = str
+    
+    def __init__(self, id, ammount, user, driver, type, fechadePago):
+        super().__init__(id, ammount, user, driver, type)
+        self.fechadePago = fechadePago
