@@ -1,3 +1,4 @@
+#HERENCIA DENTRO DEL MISMO ARCHIVO 
 class Vehiculo():
 
     def __init__(self, color, ruedas):
@@ -19,7 +20,7 @@ class Coche(Vehiculo):
         return "color {}, {} km/h, {} ruedas, {} caballos".format( self.color, self.velocidad, self.ruedas, self.cilindrada )
 
 
-coche = Coche("blanco", 4, 180, 1300)
+coche = Coche("blanco", 4, 180, 1500)
 print(coche)
 
 class Vehiculo():

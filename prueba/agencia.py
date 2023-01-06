@@ -1,4 +1,5 @@
-class agencia:
+#CREACION DE UNA CLASE QUE CONTENGA EL METODO __str__
+class Agencia:
     nombre   = str
     modelo   = int
     año      = str
@@ -13,6 +14,6 @@ class agencia:
     def __str__(self):
         return f"El señor {self.nombre} adquirio su auto {self.modelo} el dia 25 de agosto del año {self.año} y el precio fue de:{self.costo} "
     
-ejemplo1 = agencia("Dany", "Mazda", 2018, 15000)
+agencia1 = Agencia("Pepe", "Susuki", 2018, 13000)
 
-print(ejemplo1)
+print(agencia1)
